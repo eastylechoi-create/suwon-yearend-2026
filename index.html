@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://suwon-yearend-2026.vercel.app">
+<meta property="og:title" content="애쓰셨어요, 올해도 — 국공립분과 원장 송년회">
+<meta property="og:description" content="12월 10일(목) 오전 11시 30분 · 마이어스 수원점 아델라홀">
+<meta property="og:image" content="https://suwon-yearend-2026.vercel.app/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="수원시어린이집연합회 국공립분과 원장 송년회 초대장">
+<title>애쓰셨어요, 올해도 — 국공립분과 원장 송년회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#d9b36c;--gold2:#f1dcae;--ink:#0b0907;--text:#efe7d8;--dim:rgba(239,231,216,.62)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000;color:var(--text)}
+  body{word-break:keep-all;overflow-wrap:break-word;font-family:'Noto Serif KR',serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .en{font-family:'Cormorant Garamond',serif}
+
+  /* background */
+  .bg{position:fixed;inset:0;z-index:0;background:
+      radial-gradient(120% 60% at 110% 0%,rgba(140,104,52,.45),transparent 60%),
+      radial-gradient(90% 50% at -20% 45%,rgba(120,86,40,.35),transparent 60%),
+      radial-gradient(100% 60% at 80% 110%,rgba(110,80,40,.35),transparent 60%),
+      linear-gradient(180deg,#0d0a07,#050403 60%,#0b0806)}
+  .silk{position:fixed;inset:-20%;z-index:0;opacity:.55;pointer-events:none;
+      background:repeating-linear-gradient(115deg,transparent 0 60px,rgba(217,179,108,.05) 90px,transparent 140px);
+      filter:blur(6px);animation:silk 26s linear infinite}
+  @keyframes silk{to{transform:translateX(140px)}}
+  .ribbon{position:fixed;left:-120px;top:22%;width:260px;height:520px;z-index:0;pointer-events:none;opacity:.55}
+  #fx{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+  .wrap{position:relative;z-index:2;max-width:440px;margin:0 auto}
+
+  /* intro */
+  #intro{position:fixed;inset:0;z-index:50;background:#000;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity 1.6s ease}
+  #intro.hide{opacity:0;pointer-events:none}
+  #intro .msg{font-family:'Gowun Batang',serif;font-size:30px;line-height:1.55;color:#fff;letter-spacing:.02em}
+  #intro .msg span{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(8px);transition:all 1s ease}
+  #intro .msg span.on{opacity:1;filter:none;transform:none}
+  #intro .msg span.g{color:var(--gold2)}
+  #intro .sub{margin-top:22px;font-size:12px;letter-spacing:.4em;color:var(--gold);opacity:0;transition:opacity 1.2s ease 0s}
+  #intro .sub.on{opacity:.85}
+  #gate{position:fixed;inset:0;z-index:55;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;cursor:pointer;transition:opacity 1s ease}
+  #gate.hide{opacity:0;pointer-events:none}
+  #gate .seal{width:96px;height:96px;border-radius:50%;border:1px solid rgba(217,179,108,.7);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.3em;color:var(--gold2);padding-left:.3em;animation:glow 2.4s ease-in-out infinite}
+  @keyframes glow{0%,100%{box-shadow:0 0 0 rgba(217,179,108,0)}50%{box-shadow:0 0 34px rgba(217,179,108,.45)}}
+  #gate .t{font-family:'Gowun Batang',serif;font-size:15px;color:var(--dim);letter-spacing:.05em}
+  #gate .s{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;color:var(--gold);opacity:.8}
+
+  /* top controls */
+  .music{position:fixed;top:16px;right:max(16px,calc(50% - 204px));z-index:40;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(217,179,108,.35);
+    display:flex;align-items:flex-end;justify-content:center;gap:3px;padding-bottom:14px;cursor:pointer}
+  .music i{display:block;width:3px;background:var(--gold2);border-radius:2px;height:4px;transition:height .2s}
+  .music.on i{animation:eq 1s ease-in-out infinite}
+  .music.on i:nth-child(2){animation-delay:.2s}.music.on i:nth-child(3){animation-delay:.4s}.music.on i:nth-child(4){animation-delay:.1s}
+  @keyframes eq{0%,100%{height:4px}50%{height:15px}}
+  .pill{position:fixed;top:21px;right:max(70px,calc(50% - 150px));z-index:40;padding:8px 16px;border-radius:30px;font-size:12.5px;
+    background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--text);border:1px solid rgba(217,179,108,.25);
+    opacity:0;transition:opacity .6s;pointer-events:none;white-space:nowrap}
+  .pill.show{opacity:1}
+
+  /* cover */
+  .cover{position:relative;height:100vh;min-height:640px;max-height:900px;padding:0 34px}
+  .cover .when{position:absolute;top:96px;left:34px;font-size:17px;letter-spacing:.32em;color:var(--dim)}
+  .cover .big{position:absolute;top:70px;right:22px;text-align:right;font-family:'Cormorant Garamond',serif;font-weight:300;
+    font-size:150px;line-height:.86;color:rgba(241,220,174,.13);letter-spacing:-.02em}
+  .cover .main{position:absolute;left:34px;right:34px;top:47%}
+  .cover .yr{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:56px;line-height:1;color:#fff}
+  .cover .ttl{font-family:'Cormorant Garamond',serif;font-size:25px;letter-spacing:.06em;margin-top:16px;color:var(--gold2)}
+  .cover .kr{font-family:'Gowun Batang',serif;font-size:15px;color:var(--dim);margin-top:6px}
+  .cover hr{border:0;height:1px;background:linear-gradient(90deg,rgba(217,179,108,.7),transparent);margin:24px 0 20px}
+  .cover .info{font-size:17px;line-height:1.9;color:#fff}
+  .cover .scroll{position:absolute;left:50%;bottom:36px;width:1px;height:70px;background:linear-gradient(transparent,rgba(241,220,174,.8));animation:drip 2.4s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  .cover > *{opacity:0;transform:translateY(14px);transition:opacity 1.4s ease,transform 1.4s ease}
+  body.ready .cover > *{opacity:1;transform:none}
+  body.ready .cover .big{transition-delay:.2s}
+  body.ready .cover .main{transition-delay:.6s}
+  body.ready .cover .scroll{transition-delay:1.2s}
+
+  section{padding:90px 30px;text-align:center}
+  .eyebrow{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.42em;color:var(--gold);margin-bottom:12px}
+  h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:25px;color:#fff;margin-bottom:34px}
+  .letter p{font-size:16.5px;line-height:2.15;color:var(--text)}
+  .letter p+p{margin-top:28px}
+  .letter .from{margin-top:42px;font-size:14px;color:var(--gold2);letter-spacing:.02em}
+  .orn{color:var(--gold);font-size:14px;letter-spacing:.6em;margin:0 auto 6px;opacity:.8}
+
+  /* calendar */
+  .mon{font-family:'Gowun Batang',serif;font-size:21px;color:#fff;margin-bottom:22px}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:14px;font-size:16px}
+  .grid div{height:42px;display:flex;align-items:center;justify-content:center;color:var(--text)}
+  .grid .h{color:var(--dim);font-size:14px}
+  .grid .sun{color:#d48d7c}
+  .grid .on{width:46px;height:46px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f5e2b8,#b8893f);color:#1a1208;font-weight:600;box-shadow:0 0 22px rgba(217,179,108,.55)}
+  .count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:38px}
+  .count div{border-radius:14px;padding:14px 0 10px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1px solid rgba(217,179,108,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .count b{display:block;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:34px;line-height:1.1;color:#fff}
+  .count small{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.14em;color:var(--dim)}
+  .dmsg{margin-top:22px;font-size:15px;color:var(--dim)}
+  .dmsg b{color:var(--gold2);font-weight:600}
+
+  /* timeline */
+  .tl{position:relative;margin:0 auto;max-width:360px;padding:10px 0}
+  .tl:before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,rgba(217,179,108,.6) 8%,rgba(217,179,108,.6) 92%,transparent)}
+  .ev{position:relative;width:50%;padding:18px 20px;}
+  .ev.l{text-align:right}
+  .ev.r{margin-left:50%;text-align:left}
+  .ev:after{content:'';position:absolute;top:34px;width:9px;height:9px;background:var(--gold2);transform:rotate(45deg)}
+  .ev.l:after{right:-5px}.ev.r:after{left:-4px}
+  .ev b{display:block;font-family:'Gowun Batang',serif;font-size:18px;color:#fff;line-height:1.45}
+  .ev em{font-style:normal;display:inline-block;margin-top:10px;padding:5px 16px;border:1px solid rgba(241,220,174,.5);border-radius:30px;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold2)}
+  .ev span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.6}
+
+  /* place */
+  .addr{font-size:17px;line-height:1.9;color:#fff;margin-bottom:26px}
+  .addr small{display:block;font-size:13.5px;color:var(--dim)}
+  .mapcard{border-radius:16px;overflow:hidden;background:#f4efe6}
+  .mapimg{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#3a2c18;
+    background:radial-gradient(circle at 50% 55%,rgba(217,179,108,.35),transparent 55%),repeating-linear-gradient(0deg,#ece5d8 0 1px,transparent 1px 28px),repeating-linear-gradient(90deg,#ece5d8 0 1px,transparent 1px 28px),#f7f2e9}
+  .mapimg .pin{font-size:30px}
+  .mapimg b{font-family:'Gowun Batang',serif;font-size:16px}
+  .maplinks{display:grid;grid-template-columns:1fr 1fr 1fr;background:#fff}
+  .maplinks a,.maplinks button{padding:15px 4px;font-size:14px;color:#222;text-decoration:none;border:0;background:none;font-family:'Noto Serif KR',serif;cursor:pointer}
+  .maplinks > *+*{border-left:1px solid #e5e0d6}
+  .way{text-align:left;margin-top:34px}
+  .way h3{font-family:'Gowun Batang',serif;font-size:19px;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .way h3 i{font-style:normal;display:inline-flex;width:24px;height:24px;border:1.5px solid var(--text);border-radius:5px;align-items:center;justify-content:center;font-size:13px;font-family:sans-serif}
+  .way p{font-size:15.5px;line-height:1.9;color:var(--text)}
+  .way + .way{margin-top:28px}
+
+  /* rsvp */
+  .btn{display:inline-block;margin-top:26px;min-width:260px;padding:16px 24px;border-radius:40px;border:0;background:#fff;color:#111;font-family:'Gowun Batang',serif;font-size:17px;cursor:pointer;box-shadow:0 6px 30px rgba(217,179,108,.25)}
+  .lead{font-size:16px;line-height:1.95;color:var(--text)}
+  .contact b{display:block;font-family:'Gowun Batang',serif;font-size:19px;color:#fff;margin-bottom:10px}
+  .contact p{font-size:15px;color:var(--dim)}
+  .share{display:flex;flex-direction:column;gap:20px;align-items:center;padding-bottom:40px}
+  .share button{background:none;border:0;color:#fff;font-family:'Gowun Batang',serif;font-size:18px;cursor:pointer;display:flex;align-items:center;gap:10px}
+  footer{text-align:center;padding:10px 0 70px;font-family:'Cormorant Garamond',serif;letter-spacing:.2em;font-size:12px;color:rgba(239,231,216,.4)}
+
+  /* modal */
+  .modal{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:none;align-items:flex-end;justify-content:center}
+  .modal.open{display:flex}
+  .sheet{width:100%;max-width:440px;background:#15110c;border-top:1px solid rgba(217,179,108,.4);border-radius:22px 22px 0 0;padding:28px 26px 34px;animation:up .4s ease}
+  @keyframes up{from{transform:translateY(100%)}}
+  .sheet h4{font-family:'Gowun Batang',serif;font-size:20px;color:#fff;text-align:center;margin-bottom:20px}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+  .seg button{padding:13px;border-radius:12px;border:1px solid rgba(217,179,108,.35);background:none;color:var(--text);font-family:inherit;font-size:15px;cursor:pointer}
+  .seg button.sel{background:var(--gold);color:#1a1208;border-color:var(--gold);font-weight:600}
+  .sheet input{width:100%;padding:13px 14px;margin-bottom:10px;border-radius:12px;border:1px solid rgba(217,179,108,.3);background:rgba(255,255,255,.05);color:#fff;font-family:inherit;font-size:15px}
+  .sheet input::placeholder,.sheet textarea::placeholder{color:rgba(239,231,216,.4)}
+  .sheet textarea{width:100%;padding:13px 14px;margin-bottom:10px;border-radius:12px;border:1px solid rgba(217,179,108,.3);background:rgba(255,255,255,.05);color:#fff;font-family:inherit;font-size:15px;resize:none;line-height:1.6}
+  .sheet .go{width:100%;margin-top:8px;padding:15px;border:0;border-radius:14px;background:#fff;color:#111;font-family:'Gowun Batang',serif;font-size:16px;cursor:pointer}
+  .sheet .note{font-size:12.5px;color:var(--dim);text-align:center;margin-top:12px;line-height:1.7}
+  .sheet .close{display:block;margin:14px auto 0;background:none;border:0;color:var(--dim);font-size:14px;font-family:inherit;cursor:pointer}
+
+  .toast{position:fixed;left:50%;bottom:44px;transform:translateX(-50%) translateY(16px);z-index:70;background:rgba(30,24,16,.92);border:1px solid rgba(217,179,108,.4);color:#fff;padding:11px 20px;border-radius:30px;font-size:13.5px;opacity:0;transition:.35s;pointer-events:none;white-space:nowrap}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+
+  .rv{opacity:0;transform:translateY(30px);transition:opacity 1.2s ease,transform 1.2s ease}
+  .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="silk"></div>
+<svg class="ribbon" viewBox="0 0 260 520"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dcaa" stop-opacity=".0"/><stop offset=".4" stop-color="#d9b36c" stop-opacity=".9"/><stop offset=".7" stop-color="#8a6a36" stop-opacity=".6"/><stop offset="1" stop-color="#f3dcaa" stop-opacity="0"/></linearGradient></defs><path d="M10 0 C220 120 240 260 120 330 C40 380 30 450 150 520" stroke="url(#rg)" stroke-width="26" fill="none" stroke-linecap="round"/></svg>
+<canvas id="fx"></canvas>
+
+<!-- 열기 -->
+<div id="gate">
+  <div class="s">YOU ARE INVITED</div>
+  <div class="seal">OPEN</div>
+  <div class="t">터치하여 초대장 열기 ♪</div>
+</div>
+<!-- 인트로 -->
+<div id="intro">
+  <div>
+    <div class="msg" id="introMsg"></div>
+    <div class="sub en" id="introSub">2026 · YEAR-END LUNCHEON</div>
+  </div>
+</div>
+
+<button class="music" id="musicBtn" aria-label="배경음악"><i></i><i></i><i></i><i></i></button>
+<div class="pill" id="pill">배경 음악이 재생 중입니다</div>
+
+<div class="wrap">
+  <!-- 표지 -->
+  <header class="cover">
+    <div class="when en">THU · 11:30AM</div>
+    <div class="big">12<br>10</div>
+    <div class="main">
+      <div class="yr">2026</div>
+      <div class="ttl">YEAR-END LUNCHEON</div>
+      <div class="kr">수원시어린이집연합회 국공립분과</div>
+      <hr>
+      <div class="info">12월 10일 (목) 오전 11시 30분<br>마이어스 수원점 아델라홀</div>
+    </div>
+    <div class="scroll"></div>
+  </header>
+
+  <!-- 모시는 글 -->
+  <section class="letter rv">
+    <div class="eyebrow">INVITATION</div>
+    <h2>모시는 글</h2>
+    <p>아이들의 하루를 지키고<br>교사들의 마음을 살피며<br>올 한 해도 묵묵히 걸어오신 원장님들께<br>깊은 감사의 마음을 전합니다.</p>
+    <p>바쁜 일정은 잠시 내려두고<br>따뜻한 점심 한 끼를 함께 나누려 합니다.</p>
+    <p>한 해의 끝자락에서<br>서로의 수고를 다독이는 시간,<br>편안한 마음으로 함께해 주세요.</p>
+    <div class="from">수원시어린이집연합회 국공립분과 임원진 드림</div>
+  </section>
+
+  <!-- 행사일 -->
+  <section class="rv">
+    <div class="eyebrow">DATE</div>
+    <h2>행사일</h2>
+    <div class="mon">12월</div>
+    <div class="grid" id="grid"></div>
+    <div class="count" id="count"></div>
+    <div class="dmsg" id="dmsg"></div>
+  </section>
+
+  <!-- 프로그램 -->
+  <section class="rv">
+    <div class="eyebrow">PROGRAM</div>
+    <h2>프로그램</h2>
+    <div class="tl">
+      <div class="ev l"><b>입장 및 환영</b><em>11:30</em></div>
+      <div class="ev r"><b>함께 걸어온<br>한&nbsp;해</b><em>11:50</em><span>우리가 함께 피워낸<br>올해의 이야기</span></div>
+      <div class="ev l"><b>오찬</b><em>12:20</em><span>따뜻한 한 끼와 담소</span></div>
+    </div>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section class="rv">
+    <div class="eyebrow">LOCATION</div>
+    <h2>오시는 길</h2>
+    <div class="addr">마이어스 수원점 아델라홀<small id="addrLine">경기 수원시 권선구 경수대로 270 터미널동 3층</small></div>
+    <div class="mapcard">
+      <div class="mapimg"><div class="pin">📍</div><b>마이어스 수원점</b><span style="font-size:13px;color:#7a6440">수원버스터미널 터미널동 3층</span></div>
+      <div class="maplinks">
+        <a href="https://naver.me/Fir7CTR6" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/?q=%EA%B2%BD%EA%B8%B0%20%EC%88%98%EC%9B%90%EC%8B%9C%20%EA%B6%8C%EC%84%A0%EA%B5%AC%20%EA%B2%BD%EC%88%98%EB%8C%80%EB%A1%9C%20270" target="_blank" rel="noopener">카카오맵</a>
+        <button id="copyPlace">주소 복사</button>
+      </div>
+    </div>
+    <div class="way"><h3><i>P</i>주차</h3><p>건물 주차장 이용 가능</p></div>
+  </section>
+
+  <!-- 참석여부 -->
+  <section class="rv">
+    <div class="eyebrow">TOGETHER</div>
+    <h2>함께해 주세요</h2>
+    <p class="lead">한 해를 마무리하는 자리에서<br>원장님들의 반가운 얼굴을<br>뵐 수 있기를 바랍니다.</p>
+    <p class="lead" style="margin-top:22px;color:var(--dim);font-size:15px">혹시 참석이 어려우시다면<br>총무 원장에게 개인톡으로<br>편하게 알려 주세요.</p>
+    <button class="btn" id="openRsvp">불참 알리기</button>
+  </section>
+
+  <section class="share rv">
+    <button id="copyLink">🔗 링크 복사하기</button>
+  </section>
+  <footer>WITH GRATITUDE · 2026</footer>
+</div>
+
+<!-- 참석 회신 시트 -->
+<div class="modal" id="modal">
+  <div class="sheet">
+    <h4>불참 알리기</h4>
+    <input id="fOrg" placeholder="어린이집 이름">
+    <input id="fName" placeholder="원장님 성함">
+    <textarea id="fWhy" rows="3" placeholder="불참 사유 (선택)"></textarea>
+    <button class="go" id="makeMsg">회신 문구 복사하기</button>
+    <div class="note">복사된 문구를 총무 원장에게<br>개인톡으로 보내 주세요.</div>
+    <button class="close" id="closeRsvp">닫기</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- 인트로 ---------- */
+const lines=[['애쓰셨어요,',''],['올해도.','g']];
+const msg=document.getElementById('introMsg');
+lines.forEach((l,i)=>{if(i)msg.appendChild(document.createElement('br'));const s=document.createElement('span');s.textContent=l[0];if(l[1])s.className=l[1];msg.appendChild(s)});
+const spans=msg.querySelectorAll('span');
+let introRan=false;
+function runIntro(){if(introRan)return;introRan=true;
+  setTimeout(()=>spans[0].classList.add('on'),500);
+  setTimeout(()=>spans[1].classList.add('on'),1400);
+  setTimeout(()=>document.getElementById('introSub').classList.add('on'),2100);
+  setTimeout(()=>{document.getElementById('intro').classList.add('hide');document.body.classList.add('ready')},3900)}
+function openGate(){const g=document.getElementById('gate');if(g.classList.contains('hide'))return;
+  if(!playing)startMusic();g.classList.add('hide');runIntro()}
+document.getElementById('gate').addEventListener('click',openGate);
+
+/* ---------- 달력 & 카운트다운 ---------- */
+const grid=document.getElementById('grid');
+['일','월','화','수','목','금','토'].forEach((d,i)=>{const e=document.createElement('div');e.className='h'+(i?'':' sun');e.textContent=d;grid.appendChild(e)});
+const first=new Date(2026,11,1).getDay();
+for(let i=0;i<first;i++)grid.appendChild(document.createElement('div'));
+for(let d=1;d<=31;d++){const e=document.createElement('div');if(d===10)e.className='on';else if((first+d-1)%7===0)e.className='sun';e.textContent=d;grid.appendChild(e)}
+const target=new Date('2026-12-10T11:30:00+09:00');
+function tick(){const t=target-new Date(),c=document.getElementById('count'),m=document.getElementById('dmsg');
+  if(t<=0){c.style.display='none';m.innerHTML='오늘, 함께해 주셔서 <b>감사합니다</b>';return}
+  const D=Math.floor(t/864e5),H=Math.floor(t/36e5)%24,M=Math.floor(t/6e4)%60,S=Math.floor(t/1e3)%60;
+  c.innerHTML=[[D,'DAYS'],[H,'HOURS'],[M,'MINUTES'],[S,'SECONDS']].map(([v,l])=>`<div><b>${String(v).padStart(2,'0')}</b><small>${l}</small></div>`).join('');
+  m.innerHTML=`송년회까지 <b>${D+1}일</b> 남았습니다`}
+tick();setInterval(tick,1000);
+
+/* ---------- 스크롤 등장 ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ---------- 금빛 보케 & 반짝이 ---------- */
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let W,H,P=[];
+function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio}rs();addEventListener('resize',rs);
+for(let i=0;i<46;i++){const big=i<10;P.push({x:Math.random(),y:Math.random(),r:big?(Math.random()*50+30):(Math.random()*2.2+.6),a:big?Math.random()*.10+.04:Math.random()*.7+.2,vy:big?-.00008:-(Math.random()*.0004+.0001),vx:(Math.random()-.5)*.0001,t:Math.random()*6,big})}
+(function loop(){cx.clearRect(0,0,W,H);
+  P.forEach(p=>{p.y+=p.vy;p.x+=p.vx;p.t+=.02;if(p.y<-.1){p.y=1.1;p.x=Math.random()}
+    const X=p.x*W,Y=p.y*H,R=p.r*devicePixelRatio,al=p.a*(p.big?1:(.55+.45*Math.sin(p.t)));
+    const g=cx.createRadialGradient(X,Y,0,X,Y,R*(p.big?1:4));
+    g.addColorStop(0,`rgba(241,210,150,${al})`);g.addColorStop(p.big?.7:.25,`rgba(217,170,96,${al*(p.big?.6:.5)})`);g.addColorStop(1,'rgba(217,170,96,0)');
+    cx.fillStyle=g;cx.beginPath();cx.arc(X,Y,R*(p.big?1:4),0,7);cx.fill()});
+  requestAnimationFrame(loop)})();
+
+/* ---------- 배경음악 (오르골 풍 왈츠, 직접 합성) ---------- */
+let AC=null,master=null,playing=false,timer=null,nextT=0,step=0;
+const BPM=84,BEAT=60/BPM;
+const mf=m=>440*Math.pow(2,(m-69)/12);
+// [코드 근음, 코드구성음], 멜로디 [음, 박]
+const song=[
+ [[48,[60,64,67]],[[76,2],[79,1]]],[[45,[57,60,64]],[[81,2],[79,1]]],
+ [[41,[57,60,65]],[[77,1],[76,1],[74,1]]],[[43,[55,59,62]],[[74,3]]],
+ [[48,[60,64,67]],[[76,2],[79,1]]],[[45,[57,60,64]],[[84,2],[83,1]]],
+ [[38,[57,62,65]],[[81,1],[79,1],[77,1]]],[[43,[55,59,65]],[[74,3]]],
+ [[41,[57,60,65]],[[77,2],[76,1]]],[[43,[55,59,62]],[[74,2],[79,1]]],
+ [[40,[55,59,64]],[[79,1],[76,1],[71,1]]],[[45,[57,60,64]],[[72,3]]],
+ [[38,[57,62,65]],[[74,1],[77,1],[81,1]]],[[43,[55,59,62]],[[79,2],[74,1]]],
+ [[48,[60,64,67]],[[76,2],[74,1]]],[[48,[60,64,67]],[[72,3]]]
+];
+function makeReverb(){const len=AC.sampleRate*2.6,b=AC.createBuffer(2,len,AC.sampleRate);
+  for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6)}
+  const cv=AC.createConvolver();cv.buffer=b;return cv}
+function bell(m,t,dur,vol){const o=AC.createOscillator(),o2=AC.createOscillator(),g=AC.createGain(),g2=AC.createGain();
+  o.type='sine';o2.type='sine';o.frequency.value=mf(m);o2.frequency.value=mf(m)*3.01;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.008);g.gain.exponentialRampToValueAtTime(.0008,t+dur);
+  g2.gain.value=.18;o2.connect(g2).connect(g);o.connect(g).connect(master);
+  o.start(t);o2.start(t);o.stop(t+dur+.05);o2.stop(t+dur+.05)}
+function pad(m,t,dur,vol){const o=AC.createOscillator(),f=AC.createBiquadFilter(),g=AC.createGain();
+  o.type='triangle';o.frequency.value=mf(m);f.type='lowpass';f.frequency.value=900;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.12);g.gain.exponentialRampToValueAtTime(.0008,t+dur);
+  o.connect(f).connect(g).connect(master);o.start(t);o.stop(t+dur+.05)}
+function scheduleBar(i,t){const [ch,mel]=song[i%song.length];const [root,tri]=ch;
+  pad(root,t,BEAT*3,.16);pad(root+12,t,BEAT*3,.06);
+  bell(tri[1],t+BEAT,BEAT*1.6,.05);bell(tri[2],t+BEAT*1.5,BEAT*1.4,.04);bell(tri[0]+12,t+BEAT*2,BEAT*1.4,.045);
+  let o=0;mel.forEach(([n,b])=>{bell(n,t+o*BEAT,BEAT*b+1.2,.17);o+=b})}
+function sched(){while(nextT<AC.currentTime+.6){scheduleBar(step,nextT);nextT+=BEAT*3;step++}}
+function startMusic(){
+  try{
+    if(!AC){AC=new (window.AudioContext||window.webkitAudioContext)();
+      master=AC.createGain();master.gain.value=0;const rv=makeReverb(),wet=AC.createGain(),dry=AC.createGain();
+      wet.gain.value=.45;dry.gain.value=.8;master.connect(dry).connect(AC.destination);master.connect(rv).connect(wet).connect(AC.destination)}
+    AC.resume();master.gain.cancelScheduledValues(AC.currentTime);master.gain.setTargetAtTime(.7,AC.currentTime,.6);
+    nextT=AC.currentTime+.1;sched();timer=setInterval(sched,150);playing=true;
+    document.getElementById('musicBtn').classList.add('on');pillShow('배경 음악이 재생 중입니다')
+  }catch(e){toast('이 기기에서는 음악을 재생할 수 없어요')}}
+function stopMusic(){if(!AC)return;clearInterval(timer);master.gain.setTargetAtTime(0,AC.currentTime,.3);playing=false;
+  document.getElementById('musicBtn').classList.remove('on');pillShow('배경 음악을 껐습니다')}
+document.getElementById('musicBtn').onclick=e=>{e.stopPropagation();playing?stopMusic():startMusic()};
+function pillShow(t){const p=document.getElementById('pill');p.textContent=t;p.classList.add('show');clearTimeout(p._t);p._t=setTimeout(()=>p.classList.remove('show'),2400)}
+// 자동재생을 허용하는 환경이면 터치 없이 바로 시작
+(function tryAutoplay(){try{startMusic();setTimeout(()=>{if(AC&&AC.state==='running'){openGate()}else{
+  if(AC){clearInterval(timer);playing=false;document.getElementById('musicBtn').classList.remove('on');document.getElementById('pill').classList.remove('show')}}},350)}catch(e){}})();
+
+/* ---------- 복사 / 회신 ---------- */
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2000)}
+async function copy(t,m){try{await navigator.clipboard.writeText(t);toast(m)}catch(e){toast('복사가 지원되지 않는 환경이에요')}}
+document.getElementById('copyLink').onclick=()=>copy(location.href,'초대장 링크를 복사했어요');
+document.getElementById('copyPlace').onclick=()=>{const a=document.getElementById('addrLine').textContent;copy('마이어스 수원점 아델라홀 · '+a,'주소를 복사했어요')};
+const modal=document.getElementById('modal');let rsvp='불참';
+document.getElementById('openRsvp').onclick=()=>modal.classList.add('open');
+document.getElementById('closeRsvp').onclick=()=>modal.classList.remove('open');
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.seg button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');rsvp=b.dataset.v});
+document.getElementById('makeMsg').onclick=()=>{const o=document.getElementById('fOrg').value.trim(),n=document.getElementById('fName').value.trim();
+  if(!o||!n){toast('어린이집 이름과 성함을 적어 주세요');return}
+  const w=document.getElementById('fWhy').value.trim();
+  copy(`[송년회 ${rsvp}] ${o} ${n} 원장`+(w?`\n사유: ${w}`:''),'문구를 복사했어요. 총무 원장에게 개인톡으로 보내 주세요');modal.classList.remove('open')};
+</script>
+</body>
+</html>
