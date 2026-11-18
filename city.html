@@ -77,8 +77,13 @@
   .cover .kr{font-family:'Gowun Batang',serif;font-size:15px;color:var(--dim);margin-top:6px}
   .cover hr{border:0;height:1px;background:linear-gradient(90deg,rgba(217,179,108,.7),transparent);margin:24px 0 20px}
   .cover .info{font-size:17px;line-height:1.9;color:#fff}
-  .cover .scroll{position:absolute;left:50%;bottom:36px;width:1px;height:70px;background:linear-gradient(transparent,rgba(241,220,174,.8));animation:drip 2.4s ease-in-out infinite}
-  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  .cover .scroll{position:absolute;left:0;right:0;bottom:34px;margin:0 auto;width:120px;display:flex;flex-direction:column;align-items:center;gap:10px;background:none;border:0;cursor:pointer;color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.42em;padding-left:.42em}
+  .cover .scroll .kr{font-family:'Noto Serif KR',serif;font-size:12.5px;letter-spacing:.08em;color:var(--dim);padding:0;margin:0}
+  .cover .scroll .mouse{width:24px;height:38px;border:1.5px solid rgba(241,220,174,.75);border-radius:14px;position:relative}
+  .cover .scroll .mouse:before{content:'';position:absolute;left:50%;top:7px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--gold2);animation:wheel 1.8s ease-in-out infinite}
+  .cover .scroll .chev{width:12px;height:12px;border-right:1.5px solid var(--gold2);border-bottom:1.5px solid var(--gold2);transform:rotate(45deg);margin-top:-4px;animation:chev 1.8s ease-in-out infinite}
+  @keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+  @keyframes chev{0%,100%{opacity:.3;transform:rotate(45deg) translate(0,0)}50%{opacity:1;transform:rotate(45deg) translate(4px,4px)}}
   .cover > *{opacity:0;transform:translateY(14px);transition:opacity 1.4s ease,transform 1.4s ease}
   body.ready .cover > *{opacity:1;transform:none}
   body.ready .cover .big{transition-delay:.2s}
@@ -201,7 +206,7 @@
       <hr>
       <div class="info">12월 10일 (목) 오전 11시 30분<br>마이어스 수원점 아델라홀</div>
     </div>
-    <div class="scroll"></div>
+    <button class="scroll" id="scrollHint" aria-label="아래로 내려보기"><span class="mouse"></span><span class="chev"></span><span>SCROLL</span><span class="kr">아래로 내려 주세요</span></button>
   </header>
 
   <!-- 모시는 글 -->
@@ -244,10 +249,6 @@
     <div class="eyebrow">TOGETHER</div>
     <h2>함께해 주세요</h2>
     <p class="lead">한 해를 마무리하는 자리에서<br>반가운 얼굴로 뵐 수 있기를<br>진심으로 바랍니다.</p>
-  </section>
-
-  <section class="share rv">
-    <button id="copyLink">🔗 링크 복사하기</button>
   </section>
   <footer>WITH GRATITUDE · 2026</footer>
 </div>
@@ -352,7 +353,8 @@ function pillShow(t){const p=document.getElementById('pill');p.textContent=t;p.c
 /* ---------- 복사 / 회신 ---------- */
 function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2000)}
 async function copy(t,m){try{await navigator.clipboard.writeText(t);toast(m)}catch(e){toast('복사가 지원되지 않는 환경이에요')}}
-document.getElementById('copyLink').onclick=()=>copy(location.href,'초대장 링크를 복사했어요');
+document.getElementById('scrollHint').onclick=()=>document.querySelector('.letter').scrollIntoView({behavior:'smooth'});
+addEventListener('scroll',()=>{const h=document.getElementById('scrollHint');if(h)h.style.opacity=scrollY>80?'0':''},{passive:true});
 document.getElementById('copyPlace').onclick=()=>{const a=document.getElementById('addrLine').textContent;copy('마이어스 수원점 아델라홀 · '+a,'주소를 복사했어요')};
 </script>
 </body>
